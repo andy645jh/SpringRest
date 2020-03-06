@@ -1,6 +1,8 @@
 package com.example.rest_demo.bean;
 
 import java.util.Objects;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,19 +17,39 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    private String name;
+    @Column(name="firstname")
+    private String firstname;
+    
+    @Column(name="lastname")
+    private String lastname;
     
 
-    public Persona() {
+    public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public Persona() {
     }
     
     public Persona(String name) {
-    	this.name = name;   
+    	this.firstname = name;   
     }
 
     public Persona(Long id, String name) {
         this.id = id;
-        this.name = name;        
+        this.firstname = name;        
     }
 
     public Long getId() {
@@ -38,19 +60,11 @@ public class Persona {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.id);
-        hash = 79 * hash + Objects.hashCode(this.name);     
+        hash = 79 * hash + Objects.hashCode(this.firstname);     
         return hash;
     }
 
@@ -67,7 +81,7 @@ public class Persona {
         }
         final Persona other = (Persona) obj;        
         
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.firstname, other.firstname)) {
             return false;
         }
         return Objects.equals(this.id, other.id);
@@ -77,7 +91,7 @@ public class Persona {
     public String toString() {
         final StringBuilder sb = new StringBuilder("City{");
         sb.append("id=").append(id);
-        sb.append(", name='").append(name).append('\'');       
+        sb.append(", name='").append(firstname).append('\'');       
         sb.append('}');
         return sb.toString();
     }

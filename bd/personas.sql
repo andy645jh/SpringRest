@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-03-2020 a las 19:29:36
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.2.22
+-- Tiempo de generación: 06-03-2020 a las 06:35:02
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.2.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,19 +30,27 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `persona` (
   `id` int(10) NOT NULL,
-  `name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `persona`
 --
 
-INSERT INTO `persona` (`id`, `name`) VALUES
-(1, 'elkin'),
-(2, 'pedro'),
-(3, 'luis'),
-(4, 'maria'),
-(5, 'jersson');
+INSERT INTO `persona` (`id`, `firstname`, `lastname`) VALUES
+(1, 'elkin', 'murillo'),
+(3, 'asd', 'vbn'),
+(4, 'erty', 'sdf'),
+(5, 'uiou', 'tyu'),
+(6, 'fh', 'mium'),
+(7, 'martin', 'diaz'),
+(8, 'prueba', 'prueba'),
+(9, 'test', 'test1'),
+(10, 'info1', 'info2'),
+(11, 'info3', 'info4'),
+(12, 'probar', 'probar2'),
+(13, 'ultima', 'ultima');
 
 --
 -- Índices para tablas volcadas
@@ -62,7 +70,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

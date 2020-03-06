@@ -44,7 +44,8 @@ public class PersonaController {
 		Persona newPersona = personaService.findId(id);
 		if(newPersona!=null)
 		{
-			newPersona.setName(persona.getName());
+			newPersona.setFirstname(persona.getFirstname());
+			newPersona.setLastname(persona.getLastname());
 			Persona pSaved= personaService.save(newPersona);
 			if(pSaved.getId().equals(id))
 			{
@@ -67,7 +68,6 @@ public class PersonaController {
         }
     }
     
-    //agregar en los Headers de Postman Content-Type: application/json
     @RequestMapping(value="/personas/create", method=RequestMethod.PUT)
     public ResponseEntity<?> createPersona(@RequestBody Persona persona) {
 
